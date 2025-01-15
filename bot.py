@@ -22,5 +22,5 @@ async def on_message(message):
         await message.channel.send("Я робот, у меня памяти пять мегабайт.")
 
 # Запуск бота. Замените 'YOUR_BOT_TOKEN' на токен вашего бота.
-bot.run('MTMyOTEyOTMwNjk5NTI5ODM1NA.GJMaJ5.Aty5VKJ31QYMrDBbp934zhCuOTbZiFZy80MDpU')
+bot.run('BOT_TOKEN')
 

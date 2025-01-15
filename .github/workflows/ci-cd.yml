@@ -1,0 +1,37 @@
+name: CI/CD for Discord Bot
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Скачиваем код из репозитория
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Логинимся в DockerHub (если нужен деплой)
+    - name: Log in to DockerHub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.farf12 }}
+        password: ${{ secrets.ytlolpoop05 }}
+
+    # 3. Собираем Docker-образ
+    - name: Build Docker Image
+      run: |
+        docker build -t discord-bot .
+
+    # 4. Публикуем образ (если нужно)
+    - name: Push Docker Image
+      run: |
+        docker tag discord-bot ${{ secrets.DOCKER_USERNAME }}/discord-bot:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/discord-bot:latest
+

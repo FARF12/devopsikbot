@@ -7,6 +7,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN не найден в переменных окружения.")
 
+
 # Создаем экземпляр клиента с намерениями для работы с личными сообщениями
 intents = discord.Intents.default()
 intents.messages = True

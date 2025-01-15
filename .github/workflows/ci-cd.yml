@@ -32,5 +32,5 @@ jobs:
     # 4. Tag and Push Docker Image
     - name: Push Docker Image
       run: |
-        docker tag discord-bot ${{ secrets.DOCKER_USERNAME }}/devopsik-bot:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/devopsik-bot:latest
+       docker tag discord-bot farf12/devopsik-bot:latest
+       docker push farf12/devopsik-bot:latest

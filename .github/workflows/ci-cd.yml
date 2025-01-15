@@ -21,8 +21,8 @@ jobs:
     - name: Log in to DockerHub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.farf12 }}
-        password: ${{ secrets.ytlolpoop05 }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
 
     # 3. Собираем Docker-образ
     - name: Build Docker Image

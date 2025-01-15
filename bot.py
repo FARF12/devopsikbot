@@ -24,7 +24,7 @@ async def on_ready():
 async def on_message(message):
     # Проверяем, является ли сообщение личным и не от самого бота
     if isinstance(message.channel, discord.DMChannel) and not message.author.bot:
-        await message.channel.send("Я робот, у меня памяти пять мегабайт.")
+        await message.channel.send("Я робот, у меня памяти 16 мегабайт.")
 
 # Запуск бота с использованием токена из переменной окружения
 bot.run(BOT_TOKEN)

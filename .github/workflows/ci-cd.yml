@@ -32,6 +32,6 @@ jobs:
     # 4. Публикуем образ (если нужно)
     - name: Push Docker Image
       run: |
-        docker tag discord-bot ${{ secrets.DOCKER_USERNAME }}/discord-bot:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/discord-bot:latest
+        docker tag discord-bot ${{ secrets.DOCKER_USERNAME }}/devopsik-bot:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/devopsik-bot:latest
 

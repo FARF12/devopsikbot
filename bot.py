@@ -1,7 +1,11 @@
-
-
+import os
 import discord
 from discord.ext import commands
+
+# Получаем токен из переменной окружения
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN не найден в переменных окружения.")
 
 # Создаем экземпляр клиента с намерениями для работы с личными сообщениями
 intents = discord.Intents.default()
@@ -21,6 +25,5 @@ async def on_message(message):
     if isinstance(message.channel, discord.DMChannel) and not message.author.bot:
         await message.channel.send("Я робот, у меня памяти пять мегабайт.")
 
-# Запуск бота. Замените 'YOUR_BOT_TOKEN' на токен вашего бота.
-bot.run('BOT_TOKEN')
-
+# Запуск бота с использованием токена из переменной окружения
+bot.run(BOT_TOKEN)
